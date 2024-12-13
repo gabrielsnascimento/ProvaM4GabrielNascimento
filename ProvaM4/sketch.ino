@@ -7,7 +7,6 @@
 
 const int pinoBotao = 18;  // Pino do botão
 int estadoBotao = 0;  // Variável de estado do botão
-bool botaoFoiPressionado = false;
 
 const int pinoLDR = 4;  // Pino do LDR
 int limiteLDR = 600;
@@ -39,8 +38,8 @@ void setup() {
   Serial.println("Conectado ao WiFi com sucesso!"); // Considerando que saiu do loop acima, o ESP32 agora está conectado ao WiFi (outra opção é colocar este comando dentro do if abaixo)
 
   /// Verifica estado do botão
-  buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH) {
+  estadoBotao = digitalRead(estadoBotao);
+  if (estadoBotao == HIGH) {
     Serial.println("Botão pressionado!");
   } else {
     Serial.println("Botão não pressionado!");
